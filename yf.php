@@ -120,3 +120,38 @@ function normalize($a) {
 
     return $a;
 }
+
+function dimension($a) {
+    return product($a) / hook_number($a);
+}
+
+function product($a) {
+    global $n;
+
+    print_r($a);
+
+    $product = 1;
+    for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
+        for ($a_col_id = 0; $a_col_id < strlen($a[$a_row_id]); $a_col_id++) {
+            echo $product;
+            $box_value = $n + $a_col_id - $a_row_id;
+            echo " ";
+            echo $box_value;
+            echo "</br>";
+            $product *= $box_value;
+        }
+    }
+
+    return $product;
+}
+
+function hook_number($a) {
+    $hook_number = 1;
+    for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
+        for ($a_col_id = 0; $a_col_id < strlen($a[$a_row_id]); $a_col_id++) {
+            $hook_number *= (count($a) - $a_row_id) + (strlen($a[$a_row_id]) - $a_col_id);
+        }
+    }
+
+    return $hook_number;
+}
