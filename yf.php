@@ -146,9 +146,13 @@ function hook_number($a) {
             $summand1 = (count($a) - $a_row_id);
             $summand2 = (strlen($a[$a_row_id]) - $a_col_id);
             $factor = $summand1 + $summand2 - 1;
+            echo "$factor ";
             $hook_number *= $factor;
         }
+        echo "</br>";
     }
+    echo "</br>";
+    echo "</br>";
 
     return $hook_number;
 }
