@@ -131,5 +131,6 @@ $formatted_results = array();
 foreach ($results as $result) {
     $formatted_results[] = '<pre>' . implode('<br />', $result) . '</pre>';
 }
+#sort($formatted_results);
 
 $template_result = implode(' + ', $formatted_results);
