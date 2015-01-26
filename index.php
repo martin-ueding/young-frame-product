@@ -18,22 +18,32 @@
         <h1>Young Frame Tensor Product</h1>
 
         <div class="row">
-            <form method="post">
-                <div class="col-md-3">
-                    \( N = \)
-                    <input type="text" size="1" value="3" name="N" />
-                </div>
-                <div class="col-md-6">
-                    <textarea cols="10" rows="5" name="A">##
+            <div class="col-md-12">
+                <form method="post" class="form-inline">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">N</div>
+                            <input type="text" class="form-control" name="N" placeholder="N" value="3" size="1" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">A</div>
+                                <textarea cols="10" rows="5" name="A">##
 #</textarea>
+                        </div>
+                    </div>
                     \( \otimes \)
-                    <textarea cols="10" rows="5" name="B">##
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">A</div>
+                                <textarea cols="10" rows="5" name="B">##
 #</textarea>
-                </div>
-                <div class="col-md-3">
+                        </div>
+                    </div>
                     <input type="submit" class="btn btn-success btn-lg" value="compute" />
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
 
         <? if (count($results) > 0): ?>

@@ -28,31 +28,34 @@ for ($b_row_id = 0; $b_row_id < count($b); $b_row_id++) {
 $results = array();
 $messages = array();
 
-$messages[] = '<div class="alert alert-info">Starting tensor multiplication of '.format($a).' and '.format($b).' with \( N = '.$n.' \).</div>';
+if (!empty($a_text) && !empty($b_text)) {
+    $messages[] = '<div class="alert alert-info">Starting tensor multiplication of '.format($a).' and '.format($b).' with \( N = '.$n.' \).</div>';
 
-add_block($a, 0, 0);
 
-$formatted_results = array();
-foreach ($results as $result) {
-    $formatted_results[] = format($result);
-}
-#sort($formatted_results);
+    add_block($a, 0, 0);
 
-$template_result = implode(' \( \oplus \) ', $formatted_results);
-
-$normalized_results = array();
-foreach ($results as $result) {
-    $normalized_result = format(normalize($result));
-    if (array_key_exists($normalized_result, $normalized_results)) {
-        $normalized_results[$normalized_result]++;
+    $formatted_results = array();
+    foreach ($results as $result) {
+        $formatted_results[] = format($result);
     }
-    else {
-        $normalized_results[$normalized_result] = 1;
-    }
-}
+    #sort($formatted_results);
 
-$norm_results_format = array();
-foreach ($normalized_results as $norm_res => $mult) {
-    $norm_results_format[] = $mult . $norm_res;
+    $template_result = implode(' \( \oplus \) ', $formatted_results);
+
+    $normalized_results = array();
+    foreach ($results as $result) {
+        $normalized_result = format(normalize($result));
+        if (array_key_exists($normalized_result, $normalized_results)) {
+            $normalized_results[$normalized_result]++;
+        }
+        else {
+            $normalized_results[$normalized_result] = 1;
+        }
+    }
+
+    $norm_results_format = array();
+    foreach ($normalized_results as $norm_res => $mult) {
+        $norm_results_format[] = $mult . $norm_res;
+    }
+    $template_result_norm = implode(' \( \oplus \) ', $norm_results_format);
 }
-$template_result_norm = implode(' \( \oplus \) ', $norm_results_format);
