@@ -47,6 +47,13 @@
                     <?= $template_result ?>
                 </div>
             </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <?= $template_result_norm ?>
+                </div>
+            </div>
         </div>
         <? endif ?>
 

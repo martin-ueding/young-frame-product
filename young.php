@@ -38,4 +38,21 @@ foreach ($results as $result) {
 }
 #sort($formatted_results);
 
-$template_result = implode(' + ', $formatted_results);
+$template_result = implode(' \( \oplus \) ', $formatted_results);
+
+$normalized_results = array();
+foreach ($results as $result) {
+    $normalized_result = format(normalize($result));
+    if (array_key_exists($normalized_result, $normalized_results)) {
+        $normalized_results[$normalized_result]++;
+    }
+    else {
+        $normalized_results[$normalized_result] = 1;
+    }
+}
+
+$norm_results_format = array();
+foreach ($normalized_results as $norm_res => $mult) {
+    $norm_results_format[] = $mult . $norm_res;
+}
+$template_result_norm = implode(' \( \oplus \) ', $norm_results_format);

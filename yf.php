@@ -112,3 +112,11 @@ function is_legal(&$a) {
 function format($a) {
     return '<pre class="yf">' . implode('<br />', $a) . '</pre>';
 }
+
+function normalize($a) {
+    for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
+        $a[$a_row_id] = preg_replace('/[a-z]/', '#', $a[$a_row_id]);
+    }
+
+    return $a;
+}
