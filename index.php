@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
        <title></title>
     </head>
     <body>
@@ -30,8 +31,10 @@
         </div>
 
         <div class="row">
-            <div class="well">
-                <?= $result ?>
+            <div class="col-md-12">
+                <div class="well">
+                    <?= $result ?>
+                </div>
             </div>
         </div>
     </div>
