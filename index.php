@@ -89,6 +89,11 @@
                     <?= $template_result_norm ?>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="well">
+                    <?= $template_dim_format ?>
+                </div>
+            </div>
         </div>
         <? endif ?>
 

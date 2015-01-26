@@ -42,20 +42,30 @@ if (!empty($a_text) && !empty($b_text)) {
 
     $template_result = implode(' \( \oplus \) ', $formatted_results);
 
-    $normalized_results = array();
+    $norm_assoc = array();
     foreach ($results as $result) {
-        $normalized_result = format(normalize($result));
-        if (array_key_exists($normalized_result, $normalized_results)) {
-            $normalized_results[$normalized_result]++;
+        $norm_res = normalize($result);
+        $norm_res_str = implode("\n", $norm_res);
+        if (array_key_exists($norm_res_str, $norm_assoc)) {
+            $norm_assoc[$norm_res_str]++;
         }
         else {
-            $normalized_results[$normalized_result] = 1;
+            $norm_assoc[$norm_res_str] = 1;
         }
     }
 
-    $norm_results_format = array();
-    foreach ($normalized_results as $norm_res => $mult) {
-        $norm_results_format[] = $mult . $norm_res;
+    $norm_res_fmt = array();
+    foreach ($norm_assoc as $norm_res_str => $mult) {
+        $norm_res = explode("\n", $norm_res_str);
+        $norm_res_fmt[] = $mult . format($norm_res);
     }
-    $template_result_norm = implode(' \( \oplus \) ', $norm_results_format);
+    $template_result_norm = implode(' \( \oplus \) ', $norm_res_fmt);
+
+    $dim_array = array();
+    foreach ($norm_assoc as $norm_res_str => $mult) {
+        $norm_res = explode("\n", $norm_res_str);
+        $dim_array[] = '\('.$mult.'\Gamma_{'.product($norm_res).'/'.hook_number($norm_res).'} \)';
+    }
+    $template_dim_format = implode(' \( \oplus \) ', $dim_array);
+
 }
