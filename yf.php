@@ -155,13 +155,9 @@ function hook_number($a) {
                 }
             }
             $factor = $summand1 + $summand2;
-            echo "$factor ";
             $hook_number *= $factor;
         }
-        echo "</br>";
     }
-    echo "</br>";
-    echo "</br>";
 
     return $hook_number;
 }

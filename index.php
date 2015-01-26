@@ -91,7 +91,8 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="well">
-                    <?= $template_dim_format ?>
+                    <p><?= $template_dim_format ?></p>
+                    <p>Total dimension is <?= $total_dim ?>.</p>
                 </div>
             </div>
         </div>

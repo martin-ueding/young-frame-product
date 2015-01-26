@@ -62,12 +62,14 @@ if (!empty($a_text) && !empty($b_text)) {
     $template_result_norm = implode(' \( \oplus \) ', $norm_res_fmt);
 
     $dim_array = array();
+    $total_dim = 0;
     foreach ($norm_assoc as $norm_res_str => $mult) {
         $norm_res = explode("\n", $norm_res_str);
         $p = product($norm_res);
         $h = hook_number($norm_res);
         $d = $p / $h;
         $dim_array[] = '\('.$mult.'\Gamma_{'.$p.'/'.$h.'='.$d.'} \)';
+        $total_dim += $d * $mult;
     }
     $template_dim_format = implode(' \( \oplus \) ', $dim_array);
 
