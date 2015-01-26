@@ -80,20 +80,31 @@
         <? if (count($results) > 0): ?>
         <div class="row">
             <div class="col-lg-4 col-md-6">
+                <h2>Possible combinations</h2>
                 <div class="well">
                     <?= $template_result ?>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
+                <h2>Unique combinations</h2>
                 <div class="well">
                     <?= $template_result_norm ?>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
+                <h2>Dimensionality</h2>
                 <div class="well">
                     <p><?= $template_dim_format ?></p>
+                </div>
+                <? if ($input_dim == $total_dim): ?>
+                <div class="alert alert-success">
                     <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>.</p>
                 </div>
+                <? else: ?>
+                <div class="alert alert-danger">
+                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>. This does not work out!</p>
+                </div>
+                <? endif ?>
             </div>
         </div>
         <? endif ?>
