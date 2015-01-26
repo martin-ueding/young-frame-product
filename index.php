@@ -67,7 +67,7 @@
                     \( \otimes \)
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon">A</div>
+                            <div class="input-group-addon">B</div>
                                 <textarea cols="10" rows="5" name="B">##
 #</textarea>
                         </div>
