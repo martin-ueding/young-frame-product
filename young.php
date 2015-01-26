@@ -124,3 +124,12 @@ function is_legal(&$a) {
 
     return true;
 }
+
+add_block($a, 0, 0);
+
+$formatted_results = array();
+foreach ($results as $result) {
+    $formatted_results[] = '<pre>' . implode('<br />', $result) . '</pre>';
+}
+
+$template_result = implode(' + ', $formatted_results);

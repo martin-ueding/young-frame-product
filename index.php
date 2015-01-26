@@ -34,13 +34,15 @@
             </form>
         </div>
 
+        <? if count($results) > 0: ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="well">
-                    <?= $result ?>
+                    <?= $template_result ?>
                 </div>
             </div>
         </div>
+        <? endif ?>
     </div>
     </body>
 </html>
