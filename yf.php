@@ -98,7 +98,7 @@ function is_legal(&$a) {
             if (count($counts) > 1) {
                 for ($count_id = 1; $count_id < count($counts); $count_id++) {
                     if ($counts[$count_id - 1] < $counts[$count_id]) {
-                        $messages[] = '<div class="alert alert-warning">'.format($a).' is not legal the traversal criterion is not fulfilled.</div>';
+                        $messages[] = '<div class="alert alert-warning">'.format($a).' is not legal because the traversal criterion is not fulfilled.</div>';
                         return false;
                     }
                 }
