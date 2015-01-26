@@ -9,8 +9,8 @@ if (count($a_text) > 20 || count($a_text) > 20) {
     die('Input too much. I do not want to consume all the resources of my server. :-)');
 }
 
-$a = explode("\n", $a_text);
-$b = explode("\n", $b_text);
+$a = explode("\n", trim($a_text));
+$b = explode("\n", trim($b_text));
 
 for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
     $a[$a_row_id] = preg_replace('/[^ ]/', '#', $a[$a_row_id]);
