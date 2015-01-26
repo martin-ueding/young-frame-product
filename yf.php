@@ -79,7 +79,7 @@ function is_legal(&$a) {
                 return false;
             }
             else {
-                $letters[] = $letters;
+                $letters[] = $letter;
             }
         }
     }
