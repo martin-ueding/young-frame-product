@@ -19,12 +19,16 @@
 
         <div class="row">
             <form method="post">
+                <div class="col-md-3">
+                    \( N = \)
+                    <input type="text" size="1" value="3" name="N" />
+                </div>
                 <div class="col-md-6">
                     <textarea cols="10" rows="5" name="A"></textarea>
                     \( \otimes \)
                     <textarea cols="10" rows="5" name="B"></textarea>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <input type="submit" class="btn btn-success btn-lg" value="compute" />
                 </div>
             </form>
