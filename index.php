@@ -15,7 +15,38 @@
     require('young.php');
     ?>
     <div class="container-fluid">
-        <h1>Young Frame Tensor Product</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Young Frame Tensor Product Generator</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <h2>What it does</h2>
+
+                <p>In the <a href="http://www.itkp.uni-bonn.de/~juelich/WT14/lecture.html">group theory lecture</a> on <a href="http://www.itkp.uni-bonn.de/~juelich/WT14/Exercises/Exercise13pub.pdf">problem set 13 (PDF)</a> there is an algorithm given that lets you compute the tensor product “\( \otimes \)” of two Young tableaux. In exercise A 13.2 one is asked to compute some tensor products from irreducible representation of SU(3). In the first part, \( 3 \otimes 3 \) and \( 3 \otimes 3 \) is asked.</p>
+
+                <p>During the group theory exercise on 2015-01-26 we went through the steps and computed those products by hand and trial and error. Since is a rather algorithmic task I wanted to write a program for this that does all the labor.</p>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <h2>How it works</h2>
+                <p>In the background, there is a PHP script which does all the work on this server. As always, you can find the source code <a href="https://github.com/martin-ueding/young-frame-product">on GitHub</a>. The file <code>yf.php</code> contains all the functions and actual logic. <code>young.php</code> contains some glue that brings this web interface and the back end together. <code>index.php</code> is the page you view right now, it just shows the results. The design was done with the <a href="http://getbootstrap.com/">Bootstrap framework</a>.</p>
+
+                <p>You enter the Young frames A and B into the system. Then those are converted into arrays. A recursive function called <code>add_block</code> will take the current output frame (starting with A) and a position in B. Then it will try all positions where it can add the selected block from B onto A. Those positions are the end of all the lines as well as a new column at the bottom. The function <code>add_block</code> will then call itself again with the new A which has one more element and advances to the next block on B. You can see the messages that are generated during the process at the bottom of the page.</p>
+
+                <p>If all the blocks of B are used up <em>and</em> the diagram is a legal one, it gets copied into the list of results. This list is displayed on the left. Then it will go over it again and only take the unique ones and write it as a more compact tensor sum.</p>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <h2>How to use it</h2>
+                
+                <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below. The left side shows all the generated legal diagrams with the letters in them. The right side will show the more compact tensor sum notation where multiple diagrams are taken together.</p>
+
+                <p>So once you have done the homework problem, you can then verify your results or find an error in my program :-)</p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
