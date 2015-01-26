@@ -44,7 +44,7 @@
                 
                 <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below.</p>
                 
-                <p>The first well shows all the generated legal diagrams with the letters in them. The second well will show the more compact tensor sum notation where multiple diagrams are taken together. And in the third well you find the dimension as calculated with the hook rule. To give you more information, the dimension is written out as the quotient of the product number and the hook number in the index of \( \Gamma \).</p>
+                <p>The first well shows all the generated legal diagrams with the letters in them. The second well will show the more compact tensor sum notation where multiple diagrams are taken together. And in the third well you find the dimension as calculated with the hook rule. To give you more information, the dimension is written out as the quotient of the product number and the hook number in a table as well.</p>
 
                 <p>In case there are multiple representations with the same dimension, they are still different. Look at their Young frames and decide which one should have a bar (overline).</p>
 
