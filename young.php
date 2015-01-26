@@ -3,8 +3,15 @@
 
 require_once('yf.php');
 
-$a_text = $_POST['A'];
-$b_text = $_POST['B'];
+$a_text = "##\n#";
+$b_text = "##\n#";
+
+if (!empty($_POST['A'])) {
+    $a_text = $_POST['A'];
+}
+if (!empty($_POST['B'])) {
+    $b_text = $_POST['B'];
+}
 $n = (int) $_POST['N'];
 
 if (count($a_text) > 20 || count($a_text) > 20) {
@@ -28,7 +35,7 @@ for ($b_row_id = 0; $b_row_id < count($b); $b_row_id++) {
 $results = array();
 $messages = array();
 
-if (!empty($a_text) && !empty($b_text)) {
+if (!empty($_POST['A']) && !empty($_POST['B'])) {
     $messages[] = '<div class="alert alert-info">Starting tensor multiplication of '.format($a).' and '.format($b).' with \( N = '.$n.' \).</div>';
 
     $input_dim = dimension($a) * dimension($b);

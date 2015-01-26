@@ -60,16 +60,14 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">A</div>
-                                <textarea cols="10" rows="5" name="A">##
-#</textarea>
+                            <textarea cols="10" rows="5" name="A"><?= $a_text ?></textarea>
                         </div>
                     </div>
                     \( \otimes \)
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">B</div>
-                                <textarea cols="10" rows="5" name="B">##
-#</textarea>
+                            <textarea cols="10" rows="5" name="B"><?= $b_text ?></textarea>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-success btn-lg" value="compute" />
