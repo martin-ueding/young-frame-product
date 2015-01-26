@@ -92,7 +92,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="well">
                     <p><?= $template_dim_format ?></p>
-                    <p>Total dimension is <?= $total_dim ?>.</p>
+                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>.</p>
                 </div>
             </div>
         </div>

@@ -31,6 +31,8 @@ $messages = array();
 if (!empty($a_text) && !empty($b_text)) {
     $messages[] = '<div class="alert alert-info">Starting tensor multiplication of '.format($a).' and '.format($b).' with \( N = '.$n.' \).</div>';
 
+    $input_dim = dimension($a) * dimension($b);
+
 
     add_block($a, 0, 0);
 
