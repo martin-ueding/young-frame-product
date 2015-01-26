@@ -143,9 +143,18 @@ function hook_number($a) {
     $hook_number = 1;
     for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
         for ($a_col_id = 0; $a_col_id < strlen($a[$a_row_id]); $a_col_id++) {
-            $summand1 = (count($a) - $a_row_id);
+            # Number of elements in the current row that are behind the current
+            # one, current one included.
             $summand2 = (strlen($a[$a_row_id]) - $a_col_id);
-            $factor = $summand1 + $summand2 - 1;
+
+            # Number of elements below the current one, current one excluded.
+            $summand1 = 0;
+            for ($sub_row = $a_row_id + 1; $sub_row < count($a); $sub_row++) {
+                if (strlen($a[$sub_row]) > $a_col_id) {
+                    $summand1++;
+                }
+            }
+            $factor = $summand1 + $summand2;
             echo "$factor ";
             $hook_number *= $factor;
         }
