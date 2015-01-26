@@ -25,9 +25,6 @@ for ($b_row_id = 0; $b_row_id < count($b); $b_row_id++) {
     $b[$b_row_id] = preg_replace('/[^ ]/', chr(ord('a')+$b_row_id), $b[$b_row_id]);
 }
 
-print_r($a);
-print_r($b);
-
 $results = array();
 $messages = array();
 
@@ -35,11 +32,9 @@ $messages[] = '<div class="alert alert-info">Starting tensor multiplication of '
 
 add_block($a, 0, 0);
 
-print_r($results);
-
 $formatted_results = array();
 foreach ($results as $result) {
-    $formatted_results[] = format($a);
+    $formatted_results[] = format($result);
 }
 #sort($formatted_results);
 
