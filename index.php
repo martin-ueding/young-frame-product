@@ -95,6 +95,15 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <h2>Dimensionality</h2>
+                <? if ($input_dim == $total_dim): ?>
+                <div class="alert alert-success">
+                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>.</p>
+                </div>
+                <? else: ?>
+                <div class="alert alert-danger">
+                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>. This does not work out!</p>
+                </div>
+                <? endif ?>
                 <div class="well">
                     <p><?= $template_dim_format ?></p>
                 </div>
@@ -117,15 +126,6 @@
                         <? endforeach ?>
                     </tbody>
                 </table>
-                <? if ($input_dim == $total_dim): ?>
-                <div class="alert alert-success">
-                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>.</p>
-                </div>
-                <? else: ?>
-                <div class="alert alert-danger">
-                    <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>. This does not work out!</p>
-                </div>
-                <? endif ?>
             </div>
         </div>
         <? endif ?>
