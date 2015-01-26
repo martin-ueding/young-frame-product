@@ -24,9 +24,15 @@
                     <input type="text" size="1" value="3" name="N" />
                 </div>
                 <div class="col-md-6">
-                    <textarea cols="10" rows="5" name="A"></textarea>
+                    <textarea cols="10" rows="5" name="A">
+##
+#
+                    </textarea>
                     \( \otimes \)
-                    <textarea cols="10" rows="5" name="B"></textarea>
+                    <textarea cols="10" rows="5" name="B">
+##
+#
+                    </textarea>
                 </div>
                 <div class="col-md-3">
                     <input type="submit" class="btn btn-success btn-lg" value="compute" />
@@ -34,12 +40,23 @@
             </form>
         </div>
 
-        <? if count($results) > 0: ?>
+        <? if (count($results) > 0): ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="well">
                     <?= $template_result ?>
                 </div>
+            </div>
+        </div>
+        <? endif ?>
+
+        <? if (count($messages) > 0): ?>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Messages</h2>
+                <? foreach ($messages as $message): ?>
+                <?= $message ?>
+                <? endforeach ?>
             </div>
         </div>
         <? endif ?>
