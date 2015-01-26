@@ -36,13 +36,13 @@
 
                 <p>You enter the Young frames A and B into the system. Then those are converted into arrays. A recursive function called <code>add_block</code> will take the current output frame (starting with A) and a position in B. Then it will try all positions where it can add the selected block from B onto A. Those positions are the end of all the lines as well as a new column at the bottom. The function <code>add_block</code> will then call itself again with the new A which has one more element and advances to the next block on B. You can see the messages that are generated during the process at the bottom of the page.</p>
 
-                <p>If all the blocks of B are used up <em>and</em> the diagram is a legal one, it gets copied into the list of results. This list is displayed on the left. Then it will go over it again and only take the unique ones and write it as a more compact tensor sum.</p>
+                <p>If all the blocks of B are used up <em>and</em> the diagram is a legal one, it gets copied into the list of results. This list is displayed in the first well. Then it will go over it again and only take the unique ones and write it as a more compact tensor sum in the second well.</p>
             </div>
 
             <div class="col-sm-6 col-md-4">
                 <h2>How to use it</h2>
                 
-                <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below. The left side shows all the generated legal diagrams with the letters in them. The right side will show the more compact tensor sum notation where multiple diagrams are taken together.</p>
+                <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below. The first well shows all the generated legal diagrams with the letters in them. The second well will show the more compact tensor sum notation where multiple diagrams are taken together. And in the third well you find the dimension as calculated with the hook rule. In case there are multiple representations with the same dimension, they are still different. Look at their Young frames and decide which one should have a bar (overline).</p>
 
                 <p>So once you have done the homework problem, you can then verify your results or find an error in my program :-)</p>
             </div>
@@ -79,17 +79,17 @@
 
         <? if (count($results) > 0): ?>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="well">
                     <?= $template_result ?>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="well">
                     <?= $template_result_norm ?>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="well">
                     <?= $template_dim_format ?>
                 </div>

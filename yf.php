@@ -128,16 +128,10 @@ function dimension($a) {
 function product($a) {
     global $n;
 
-    print_r($a);
-
     $product = 1;
     for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
         for ($a_col_id = 0; $a_col_id < strlen($a[$a_row_id]); $a_col_id++) {
-            echo $product;
             $box_value = $n + $a_col_id - $a_row_id;
-            echo " ";
-            echo $box_value;
-            echo "</br>";
             $product *= $box_value;
         }
     }
@@ -149,7 +143,10 @@ function hook_number($a) {
     $hook_number = 1;
     for ($a_row_id = 0; $a_row_id < count($a); $a_row_id++) {
         for ($a_col_id = 0; $a_col_id < strlen($a[$a_row_id]); $a_col_id++) {
-            $hook_number *= (count($a) - $a_row_id) + (strlen($a[$a_row_id]) - $a_col_id);
+            $summand1 = (count($a) - $a_row_id);
+            $summand2 = (strlen($a[$a_row_id]) - $a_col_id);
+            $factor = $summand1 + $summand2 - 1;
+            $hook_number *= $factor;
         }
     }
 

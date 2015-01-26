@@ -64,7 +64,7 @@ if (!empty($a_text) && !empty($b_text)) {
     $dim_array = array();
     foreach ($norm_assoc as $norm_res_str => $mult) {
         $norm_res = explode("\n", $norm_res_str);
-        $dim_array[] = '\('.$mult.'\Gamma_{'.product($norm_res).'/'.hook_number($norm_res).'} \)';
+        $dim_array[] = '\('.$mult.'\Gamma_{'.dimension($norm_res).'} \)';
     }
     $template_dim_format = implode(' \( \oplus \) ', $dim_array);
 
