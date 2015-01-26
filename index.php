@@ -24,15 +24,11 @@
                     <input type="text" size="1" value="3" name="N" />
                 </div>
                 <div class="col-md-6">
-                    <textarea cols="10" rows="5" name="A">
-##
-#
-                    </textarea>
+                    <textarea cols="10" rows="5" name="A">##
+#</textarea>
                     \( \otimes \)
-                    <textarea cols="10" rows="5" name="B">
-##
-#
-                    </textarea>
+                    <textarea cols="10" rows="5" name="B">##
+#</textarea>
                 </div>
                 <div class="col-md-3">
                     <input type="submit" class="btn btn-success btn-lg" value="compute" />
@@ -42,14 +38,12 @@
 
         <? if (count($results) > 0): ?>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-6">
                 <div class="well">
                     <?= $template_result ?>
                 </div>
             </div>
-
-        <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-6">
                 <div class="well">
                     <?= $template_result_norm ?>
                 </div>
