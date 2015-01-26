@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <form method="post" class="form-inline">
+                <form method="post" class="form-inline" action="#results">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">N</div>
@@ -80,7 +80,7 @@
         </div>
 
         <? if (count($results) > 0): ?>
-        <div class="row">
+        <div class="row" id="results">
             <div class="col-lg-4 col-md-6">
                 <h2>Possible combinations</h2>
                 <div class="well">
