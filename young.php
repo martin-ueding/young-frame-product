@@ -71,6 +71,7 @@ if (!empty($_POST['A']) && !empty($_POST['B'])) {
     $template_result_norm = implode(' \( \oplus \) ', $norm_res_fmt);
 
     $dim_array = array();
+    $dim_table = array();
     $total_dim = 0;
     foreach ($norm_assoc as $norm_res_str => $mult) {
         $norm_res = explode("\n", $norm_res_str);
@@ -79,6 +80,7 @@ if (!empty($_POST['A']) && !empty($_POST['B'])) {
         $d = $p / $h;
         $dim_array[] = '\('.$mult.'\Gamma_{'.$p.'/'.$h.'='.$d.'} \)';
         $total_dim += $d * $mult;
+        $dim_table[] = array($mult, $d, $p, $h);
     }
     $template_dim_format = implode(' \( \oplus \) ', $dim_array);
 

@@ -42,7 +42,11 @@
             <div class="col-sm-6 col-md-4">
                 <h2>How to use it</h2>
                 
-                <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below. The first well shows all the generated legal diagrams with the letters in them. The second well will show the more compact tensor sum notation where multiple diagrams are taken together. And in the third well you find the dimension as calculated with the hook rule. In case there are multiple representations with the same dimension, they are still different. Look at their Young frames and decide which one should have a bar (overline).</p>
+                <p>Write the Young frames that you want to multiply into the text boxes with any character you like (although I would only take simple letters because Unicode characters probably will be interpreted as multiple boxes). Then hit the green button and get the result below.</p>
+                
+                <p>The first well shows all the generated legal diagrams with the letters in them. The second well will show the more compact tensor sum notation where multiple diagrams are taken together. And in the third well you find the dimension as calculated with the hook rule. To give you more information, the dimension is written out as the quotient of the product number and the hook number in the index of \( \Gamma \).</p>
+
+                <p>In case there are multiple representations with the same dimension, they are still different. Look at their Young frames and decide which one should have a bar (overline).</p>
 
                 <p>So once you have done the homework problem, you can then verify your results or find an error in my program :-)</p>
             </div>
@@ -94,6 +98,25 @@
                 <div class="well">
                     <p><?= $template_dim_format ?></p>
                 </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Multiplicity</th>
+                            <th>Dimension</th>
+                            <th>Product</th>
+                            <th>Hook Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <? foreach ($dim_table as $row): ?>
+                        <tr>
+                            <? foreach ($row as $col): ?>
+                            <td><?= $col ?>
+                            <? endforeach ?>
+                        </tr>
+                        <? endforeach ?>
+                    </tbody>
+                </table>
                 <? if ($input_dim == $total_dim): ?>
                 <div class="alert alert-success">
                     <p>Total dimension by \( A \otimes B \) is <?= $input_dim ?>. The total dimension in the result is <?= $total_dim ?>.</p>
