@@ -8,7 +8,23 @@
         <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-       <title></title>
+       <title>Young Frame Tensor Product Generator</title>
+
+        <!-- Piwik -->
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//app.martin-ueding.de/piwik/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', 1]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+        <noscript><p><img src="//app.martin-ueding.de/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+        <!-- End Piwik Code -->
     </head>
     <body>
     <?php
@@ -140,6 +156,17 @@
             </div>
         </div>
         <? endif ?>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Tracking</h2>
+
+                <p>I use <a href="http://piwik.org/" target="_blank">Piwik</a>
+                on this page to track visitors. It honors the “Do not track” of
+                your browser. You can <a href="http://app.martin-ueding.de/piwik/index.php?module=CoreAdminHome&action=optOut&language=en" target="_blank">opt-out here</a>.<p>
+            </div>
+        </div>
     </div>
+
     </body>
 </html>
