@@ -91,7 +91,7 @@ if (!empty($_POST['A']) && !empty($_POST['B'])) {
         $p = product($norm_res);
         $h = hook_number($norm_res);
         $d = $p / $h;
-        $dim_array[] = '\('.$mult.'\Gamma_{'.$d.'} \)';
+        $dim_array[] = '\( '.$d.'^{'.$mult.'} \)';
         $total_dim += $d * $mult;
         $dim_table[] = array($mult, $d, $p, $h);
     }
