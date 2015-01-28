@@ -43,6 +43,21 @@ if (!empty($_POST['A']) && !empty($_POST['B'])) {
 
     add_block($a, 0, 0);
 
+    # Remove any elements that are not unique in their traversal.
+    $results_unique = array();
+    $unique_strings = array();
+    foreach ($results as $result) {
+        $string = implode("\n", $result);
+        echo "</ br>String: $string";
+        if (!isset($unique_strings[$string])) {
+            $unique_strings[$string] = 1;
+            $results_unique[] = $result;
+        }
+    }
+
+    $results = $results_unique;
+
+
     $formatted_results = array();
     foreach ($results as $result) {
         $formatted_results[] = format($result);
