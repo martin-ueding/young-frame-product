@@ -1,5 +1,5 @@
 <?php
-# Copyright © 2015 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2015 Martin Ueding <martin-ueding.de>
 # Licensed under The GNU Public License Version 2 (or later)
 
 function add_block($a, $b_row_id, $b_col_id) {
